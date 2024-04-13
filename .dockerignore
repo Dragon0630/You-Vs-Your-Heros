@@ -1,0 +1,7 @@
+# flyctl launch added from .gitignore
+**\__pycache__
+**\classes\__pycache__\modify_json.cpython-312.pyc
+**\info\user_info\user_info.json
+**\venv
+**\flask_hoghacks
+fly.toml

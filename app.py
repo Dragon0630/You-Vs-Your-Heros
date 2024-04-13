@@ -22,7 +22,7 @@ def update_text():
 @app.route('/comparison', methods = ['GET'])
 def compare():
     winner = comp = Computation()
-    generate_image()
+    #generate_image()
     return render_template("page2.html")
 
 
