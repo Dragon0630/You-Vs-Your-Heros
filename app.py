@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from classes import modify_json as JSON
 import json
 
@@ -30,6 +30,11 @@ def get_player_stats():
 @app.route("/webgl", methods = ['GET', 'POST'])
 def index():
     return render_template("/unity/index.html")
+
+
+@app.route('/unity/<path:filename>')
+def serve_unity_files(filename):
+    return send_from_directory('unity', filename)
 
 
 if __name__ == "__main__":
