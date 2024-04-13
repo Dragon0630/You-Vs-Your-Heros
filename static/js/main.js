@@ -53,6 +53,7 @@ var currentTab = 0;
 function nextClick(){
     switch(currentTab){
         case 0:
+            document.getElementById('navButtons').style.justifyContent = 'none';
             document.getElementById('nameFields').style.display = 'none';
             document.getElementById('Strength').style.display = 'flex';
             document.getElementById('back_button').style.display = 'flex';
