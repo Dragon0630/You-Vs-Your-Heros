@@ -10,11 +10,9 @@ def home():
 @app.route('/modify', methods = ['POST'])
 def update_text():
     if request.method == 'POST':
-        name = request.form['name']
-        response_data = {'message': 'Data received successfully', 'name': name}
-        return jsonify(response_data), 200
+        JSON.modify_json.__init__(request.get_json())
     else:
-        return jsonify({'error': 'Method not allowed'}), 405
+        return 405
 
 if __name__ == "__main__":
     app.run(debug=True)
