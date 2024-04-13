@@ -1,27 +1,103 @@
-const fs = require('fs');
+// function write_to_file() {
+//     var name = document.getElementById('name').value;
+//     var curl = document.getElementById('curl').value;
+//     var squat = document.getElementById('squat').value;
+//     var bench = document.getElementById('bench').value;
+//     var run = document.getElementById('run').value;
+//     var swim = document.getElementById('swim').value;
+//     var climb = document.getElementById('climb').value;
+//     var sprint = document.getElementById('sprint').value;
+//     var jump = document.getElementById('jump').value;
+//     var reaction = document.getElementById('reaction').value;
 
-// Step 1: Read the JSON file
-fs.readFile('../template.json', 'utf8', (err, data) => {
-    if (err) {
-        console.error('Error reading file:', err);
-        return;
-    }
+//     // importing the fs module
+//     const fs = require("fs");
 
-    // Step 2: Parse the JSON
-    const jsonObject = JSON.parse(data);
+//     // initializing a JavaScript object
+//     const user = {
+//         name: name,
+//         strength: {
+//             curl: curl,
+//             squat: squat,
+//             bench: bench
+//         },
+//         endurance: {
+//             run: run,
+//             swim: swim,
+//             climb: climb
+//         },
+//         agility: {
+//             sprint: sprint,
+//             jump: jump,
+//             reaction: reaction
+//         },
+//     };
 
-    // Step 3: Modify the JavaScript object
-    jsonObject.newkey = 'New Value'; // Example modification
+//     // converting the JSON object to a string
+//     const data = JSON.stringify(user);
 
-    // Step 4: Convert the JavaScript object back to JSON
-    const modifiedJSON = JSON.stringify(jsonObject, null, 2); // null and 2 for formatting
+//     // writing the JSON string content to a file
+//     fs.writeFile("/info/user_info/user_info.json", data, (error) => {
+//     // throwing the error
+//     // in case of a writing problem
+//     if (error) {
+//         // logging the error
+//         console.error(error);
 
-    // Step 5: Write the JSON back to the file
-    fs.writeFile('data.json', modifiedJSON, 'utf8', (err) => {
-        if (err) {
-            console.error('Error writing file:', err);
-            return;
+//         throw error;
+//     }
+
+//     console.log("data.json written correctly");
+//     });
+// }
+
+
+function modifyJSON() {
+    // Example JSON data
+    var name = document.getElementById('name').value;
+    var curl = document.getElementById('curl').value;
+    var squat = document.getElementById('squat').value;
+    var bench = document.getElementById('bench').value;
+    var run = document.getElementById('run').value;
+    var swim = document.getElementById('swim').value;
+    var climb = document.getElementById('climb').value;
+    var sprint = document.getElementById('sprint').value;
+    var jump = document.getElementById('jump').value;
+    var reaction = document.getElementById('reaction').value;
+    const newData = {
+        name: name,
+        strength: {
+            curl: curl,
+            squat: squat,
+            bench: bench
+        },
+        endurance: {
+            run: run,
+            swim: swim,
+            climb: climb
+        },
+        agility: {
+            sprint: sprint,
+            jump: jump,
+            reaction: reaction
+        },
+    };
+
+    // AJAX request to send the data to the server
+    fetch('/modify', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-        console.log('File has been modified successfully.');
+        console.log('JSON file modified successfully.');
+    })
+    .catch(error => {
+        console.error('There was a problem modifying the JSON file:', error);
     });
-});
+}

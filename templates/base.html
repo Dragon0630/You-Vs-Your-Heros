@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/javascript" src="../static/js/main.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}You vs Your Heros{% endblock %}</title>
@@ -8,9 +9,42 @@
     <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
 </head>
 <body>
-    <p>Please input your 100m dash time: <input type="number" id="60m_dash" name="Agility"></p>
-    <p>Please input your max benchpress: <input type="number" id="benchpress" name="Strength"></p>
-    <p>Please input your max run distance: <input type="number" id="distance" name="Stamina"></p>
-    <button class="button" id="submit_button">Submit</button>
+    <div id="content">
+        <div id="inputBox">
+            <p>Name:</p>
+            <input type="string" id="name" name="Name">
+            <div id="Strength">
+                <h1>Strength</h1>
+                <p>Curl:</p>
+                <input type="number" id="curl" name="Curl">
+                <p>Squat:</p>
+                <input type="number" id="squat" name="Squat">
+                <p>Bench:</p>
+                <input type="number" id="bench" name="Bench">
+            </div>
+            <div id="Endurance">
+                <h1>Endurance:</h1>
+                <p>Run:</p>
+                <input type="number" id="run" name="Run">
+                <p>Swim:</p>
+                <input type="number" id="swim" name="Swim">
+                <p>Climb:</p>
+                <input type="number" id="climb" name="Climb">
+            </div>
+            <div id="Agility">
+                <h1>Agility:</h1>
+                <p>Sprint:</p>
+                <input type="number" id="sprint" name="Sprint">
+                <p>Jump:</p>
+                <input type="number" id="jump" name="Jump">
+                <p>Reaction:</p>
+                <input type="number" id="reaction" name="Reaction">
+        </div>
+        <div id="navButtons">
+            <button class="button" id="back_button">Back</button>
+            <button class="button" id="next_button">Next</button>    
+        </div>
+      </div>
+    <button class="button" id="submit_button" onclick="modifyJSON()">Submit</button>
 </body>
 </html>
