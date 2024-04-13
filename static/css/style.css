@@ -60,21 +60,51 @@ body {
 /*-------------------------------Atribute Box------------------------------*/
 #Strength, #Endurance, #Agility {
     padding: 5px;
-    border: 1px solid var(--border-color);
     display: none;
     flex-direction: column;
     align-items: center;
     width: auto;
 }
 
-#Strength, #Endurance, #Agility h1{
+#Strength h1, #Endurance h1, #Agility h1{
     color: var(--primary-text-color);
-    font-size: 15px;
+    font-size: 20px;
 }
 
-#Strength, #Endurance, #Agility p{
+#Strength p, #Endurance p, #Agility p{
     color: var(--primary-text-color);
     font-size: 15px;
+    margin-bottom: 1px;
+    margin-top:2px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+    width: 250px; /* Set the width of the input box */
+    padding: 12px 20px; /* Padding inside the input */
+    margin: 8px 0; /* Margin around the input */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded corners */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    font-size: 16px; /* Font size for better readability */
+    background-color: white; /* Background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+input[type="number"]:hover {
+    background-color: var(--inputbox-color);
+    box-shadow: 0 4px 8px rgba(102, 175, 233, 0.5);
+    transform: scale(1.05);
+}
+
+input[type="number"]:focus{
+    outline: none;
+    box-shadow: 0 0 8px 0 rgba(102, 175, 233, 0.6);
 }
 
 /*-------------------------------Name------------------------------*/
