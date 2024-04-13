@@ -24,13 +24,8 @@ def compare():
     comp = Computation()
     indexNumber = comp.randomNumber()
     results = comp.compare()
-<<<<<<< HEAD
-
-=======
->>>>>>> 8c4a4bdd7b8095085226e34f5a87af987afbfe6d
     hero_name = results['hero_name']
     score_result = results['score_result']
-    
     #generate_image()
     return render_template("page2.html", heroName=hero_name, scoreResult=score_result, safeHeroName=results['safe_hero_name'], choice=indexNumber)
 
@@ -39,7 +34,6 @@ def get_player_stats():
     with open(r'.\\info\\user_info\\user_info.json', 'r') as json_file:
         data = json.load(json_file)
     return jsonify(data)
-
 
 @app.route("/webgl", methods = ['GET', 'POST'])
 def index():

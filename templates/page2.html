@@ -10,39 +10,26 @@
 </head>
 <body>
     <div id="content2">
-        <iframe id="unityIFrame" src="/unity/index.html" style="display:none;" width="800" height="600" frameborder="2" allow="fullscreen"></iframe>
-        <div id="overlay" style="display:none;"></div> <!-- Assuming you have an overlay -->
+        <iframe src="/unity/index.html" width="800" height="600" frameborder="2" allow="fullscreen" id="unityIFrame"></iframe>
         <div id="upperContainer">
             <div id="playerStats">
                 <h1>Player</h1>
-<<<<<<< HEAD
-                <img src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
-                <button class="button" id="player_stat">Stats</button>
-=======
                 <img src="/static/img/user{{choice}}.webp" alt="Placeholder Image" width="300" height="350">
                 <button class="button" id="player_stat" onclick="fetchPlayerStats()">Stats</button>
->>>>>>> 8c4a4bdd7b8095085226e34f5a87af987afbfe6d
             </div>
             <div id="gameContainer">
-                <button class="button" id="startGame">Start Game</button>
+                <button class="button" id="startGame" onclick="startGame()"> </button>
             </div>
             <div id="heroStats">
-<<<<<<< HEAD
-                <h1>Hero</h1>
-                <img id="heroImage" src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
-=======
                 <h1>{{ heroName }}</h1>
                 <img id="heroImage" src="/static/img/{{ safeHeroName }}.jpg" height=350px alt="Hero Image">        
                 <button class="button" id="hero_stat" onclick="fetchHeroStats()">Stats</button>
->>>>>>> 8c4a4bdd7b8095085226e34f5a87af987afbfe6d
             </div>
         </div>
-        <div id="summaryBox">
-            <h1>Summary</h1>
-        </div>
     </div>
+    <div id="overlay"></div>
 
-    <!-- Modal for Player Stats -->
+    <!-- Modal -->
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -52,5 +39,11 @@
     </div>
     <!-- JavaScript to handle the modal and fetch data -->
     <script src="/static/js/playerStats.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateHeroImage(hero_name);
+            alert("hero_name");
+        });
+    </script>
 </body>
 </html>

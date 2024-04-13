@@ -53,7 +53,7 @@ class Computation:
         return {'hero_name': hero_name, 'score_result': score_result, 'safe_hero_name': safe_hero_name}
     
     def randomNumber(self):
-        return random.randint(0, 3)
+        return random.randint(0, 2)
 
 # Usage
 if __name__ == "__main__":
