@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="../static/js/main.js"></script>
+{% block header %}
+    <meta charset="UTF-8">
+    <title>{% block title %}You vs Your Heros{% endblock %}</title>
+{% endblock %}
+{% block page_content %}
+    <div id="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th></th>
+                    <th>Character</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Users Name</td>
+                    <td></td>
+                    <td>Characters Name</td>
+                </tr>
+                <tr>
+                    <td>Users Strength Score:</td>
+                    <td></td>
+                    <td>Characters Strength Score:</td>
+                </tr>
+                <tr>
+                    <td>Users Agility Score:</td>
+                    <td></td>
+                    <td>Characters Agility Score</td>
+                </tr>
+                <tr>
+                    <td>Users Enduracne Score:</td>
+                    <td></td>
+                    <td>Characters Endurance Score</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Instresting summary goes here</p>
+    </div>
+{% endblock %}
+</html>

@@ -47,3 +47,59 @@ function modifyJSON() {
         console.error('There was a problem modifying the JSON file:', error);
     });
 }
+
+var currentTab = 0;
+function nextClick(){
+    switch(currentTab){
+        case 0:
+            document.getElementById('nameFields').style.display = 'none';
+            document.getElementById('Strength').style.display = 'flex';
+            document.getElementById('back_button').style.display = 'flex';
+            break;
+        case 1:
+            document.getElementById('Strength').style.display = 'none';
+            document.getElementById('Endurance').style.display = 'flex';
+            break;
+        case 2:
+            document.getElementById('Endurance').style.display = 'none';
+            document.getElementById('Agility').style.display = 'flex';
+            document.getElementById('submit_button').style.display = 'flex';
+            document.getElementById('next_button').style.display = 'none';
+            break;
+        default:
+            break;
+    }
+    currentTab++;
+}
+
+function backClick(){
+    currentTab--;
+    switch(currentTab){
+        case 0:
+            document.getElementById('nameFields').style.display = 'flex';
+            document.getElementById('Strength').style.display = 'none';
+            document.getElementById('back_button').style.display = 'none';
+            break;
+        case 1:
+            document.getElementById('nameFields').style.display = 'none';
+            document.getElementById('Strength').style.display = 'flex';
+            document.getElementById('back_button').style.display = 'flex';
+            document.getElementById('Endurance').style.display = 'none';
+            break;
+        case 2:
+            document.getElementById('Strength').style.display = 'none';
+            document.getElementById('Endurance').style.display = 'flex';
+            document.getElementById('Agility').style.display = 'none';
+            document.getElementById('submit_button').style.display = 'none';
+            document.getElementById('next_button').style.display = 'flex';
+            break;
+        case 3:
+            document.getElementById('Endurance').style.display = 'none';
+            document.getElementById('Agility').style.display = 'flex';
+            document.getElementById('submit_button').style.display = 'flex';
+            document.getElementById('next_button').style.display = 'none';
+            break;
+        default:
+            break;
+    }
+}
