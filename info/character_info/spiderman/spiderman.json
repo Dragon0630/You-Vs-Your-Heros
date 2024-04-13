@@ -1,0 +1,18 @@
+{
+    "name": "Spiderman",
+    "strength": {
+        "curl": "",
+        "squat": "",
+        "bench": ""
+    },
+    "endurance": {
+        "run": "",
+        "swim": "",
+        "climb": ""
+    },
+    "agility": {
+        "sprint": "",
+        "jump": "",
+        "reaction": ""
+    }
+}
