@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 from classes import modify_json as JSON
 import json
 from classes.computation import Computation
+from classes.generate_image import generate_image
 
 app = Flask(__name__)
 
@@ -21,6 +22,7 @@ def update_text():
 @app.route('/comparison', methods = ['GET'])
 def compare():
     winner = comp = Computation()
+    generate_image()
     return render_template("page2.html")
 
 
@@ -38,6 +40,13 @@ def index():
 @app.route('/unity/<path:filename>')
 def serve_unity_files(filename):
     return send_from_directory('unity', filename)
+
+
+@app.route('/get-image')
+def get_image():
+    attributes = request.args.get('attributes')  # Assuming attributes are passed as a query parameter
+    image_path = generate_image(attributes)
+    return send_file(image_path, mimetype='image/png')
 
 
 if __name__ == "__main__":
