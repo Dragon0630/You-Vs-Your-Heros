@@ -23,9 +23,14 @@ def compare():
 
 @app.route('/get_player_stats', methods = ['GET'])
 def get_player_stats():
-    with open(r'.\info\user_info\user_info.json', 'r') as json_file:
+    with open(r'.\\info\\user_info\\user_info.json', 'r') as json_file:
         data = json.load(json_file)
     return jsonify(data)
+
+@app.route("/webgl")
+def index():
+    return render_template("/unity/index.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
