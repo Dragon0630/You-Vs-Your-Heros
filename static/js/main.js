@@ -174,6 +174,5 @@ gl.drawArrays(gl.TRIANGLES, 0, 3);
 
 
 function startGame(){
-    alert('hey');
     document.getElementById('unityIFrame').style.display = 'flex';
 }

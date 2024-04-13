@@ -55,3 +55,9 @@ function startGame(){
     document.getElementById('unityIFrame').style.display = 'block'; // Show the iframe
     document.getElementById('overlay').style.display = 'block'; // Show the overlay
 }
+
+
+function updateHeroImage(heroName) {
+    document.getElementById('heroImage').src = 'static/img/${heroName}' + '.jpg'; // Sets the new image path
+    document.getElementById('heroImage').alt = heroName; // Updates alt text
+}

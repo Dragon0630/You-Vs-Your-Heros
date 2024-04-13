@@ -7,11 +7,7 @@ class Computation:
         self.user_data = self.load_json(self.file_name)
         self.hero_data = None
         self.characters = [
-            "A_Minion", "Ash_Ketchum", "Barney_The_Dinosaur", "Chani", "Clone_Trooper",
-            "Frank_Castle", "Frodo_Baggins", "Gaston", "Gimli", "Gru",
-            "Hiccup", "Jack_Sparrow", "Jar_Jar_Binks", "John_Wick", "Joker",
-            "Legolas", "Maui", "Mr_Incredible", "Paul_Atreides", "Shrek",
-            "Snorlax", "spiderman"
+            "ash","Barney_The_Dinosaur","chani","Clone_Trooper","frankcastle","Frodo_Baggins","gaston","gimli","gru","hiccup","jack","Jar_Jar_Binks","john","joker","legolas","maul","A_Minion","Mr_incredible","Paul_Atreides","shrek","snorlax","spiderman"
         ]
 
     def load_json(self, file_path):
