@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from classes import modify_json as JSON
 import json
+from classes import computation as comp
 
 app = Flask(__name__)
 
@@ -18,6 +19,7 @@ def update_text():
 
 @app.route('/comparison', methods = ['GET'])
 def compare():
+    winner = comp.computation.__init__()
     return render_template("page2.html")
 
 
