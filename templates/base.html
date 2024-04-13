@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <script type="text/javascript" src="../static/js/main.js"></script>
-<head>
+{% block header %}
     <meta charset="UTF-8">
     <title>{% block title %}You vs Your Heros{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="/static/css/style.css">
     <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
-</head>
-<body>
+{% endblock %}
+{% block page_content %}
     <div id="content">
         <div id="inputBox">
+            <img src="/static/img/logo.png" alt="logo" id="logo">
             <p>Name:</p>
             <input type="string" id="name" name="Name">
+            <button class="button" id="submit_button">Submit</button>
             <div id="Strength">
                 <h1>Strength</h1>
                 <p>Curl:</p>
@@ -45,6 +46,5 @@
             <button class="button" id="next_button">Next</button>    
         </div>
       </div>
-    <button class="button" id="submit_button" onclick="modifyJSON()">Submit</button>
-</body>
+{% endblock %}
 </html>
