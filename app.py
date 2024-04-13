@@ -5,11 +5,6 @@ from classes import computation as comp
 
 app = Flask(__name__)
 
-
-@app.route("/You-Vs-Your-Heros/")
-def basic():
-    return render_template("base.html")
-
 @app.route("/")
 def home():
     return render_template("base.html")
