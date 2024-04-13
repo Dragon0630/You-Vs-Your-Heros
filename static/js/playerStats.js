@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Set up event listeners for modal interactions and any other initializations
     setupModalInteractions();
     setupButtonListeners();
 });
@@ -21,16 +20,20 @@ function setupModalInteractions() {
     };
 }
 
-function setupButtonListeners() {
-    // Add event listeners for other buttons if necessary
-    const startGameBtn = document.getElementById('startGame');
-    if (startGameBtn) {
-        startGameBtn.addEventListener('click', startGame);
-    }
 
+
+function setupButtonListeners() {
     const playerStatsBtn = document.getElementById('player_stat');
+    const heroStatsBtn = document.getElementById('hero_stat');
+
     if (playerStatsBtn) {
         playerStatsBtn.addEventListener('click', fetchPlayerStats);
+    }
+    if (heroStatsBtn) {
+        heroStatsBtn.addEventListener('click', function() {
+            const heroName = document.getElementById('heroImage').alt; // Assuming the hero name is stored in the alt text of the hero image
+            fetchHeroStats(heroName);
+        });
     }
 }
 
@@ -38,44 +41,41 @@ function fetchPlayerStats() {
     fetch('/get_player_stats')
         .then(response => response.json())
         .then(data => {
-            const modal = document.getElementById('myModal');
-            const modalBody = document.getElementById('modalBody');
-            modalBody.innerHTML = ''; // Clear previous data
-
-            // Function to add data to the modal body
-            function addDataToModal(label, value) {
-                modalBody.innerHTML += `<p><strong>${label}:</strong> ${value}</p>`;
-            }
-
-            // Iterate through each key in the data object
-            Object.keys(data).forEach(key => {
-                const value = data[key];
-                if (typeof value === 'object' && value !== null) {
-                    // If the value is an object, iterate through its keys
-                    addDataToModal(key, ''); // Add a section title for the category
-                    Object.keys(value).forEach(subKey => {
-                        addDataToModal(subKey, value[subKey]);
-                    });
-                } else {
-                    // If the value is not an object, directly add the data
-                    addDataToModal(key, value);
-                }
-            });
-
-            modal.style.display = "block";
+            displayStats(data);
         })
         .catch(error => console.error('Error fetching player stats:', error));
 }
 
-function startGame() {
-    document.getElementById('unityIFrame').style.display = 'block'; // Show the iframe
-    document.getElementById('overlay').style.display = 'block'; // Show the overlay
+function fetchHeroStats(heroName) {
+    fetch('/get_hero_stats/${heroName}')
+        .then(response => response.json())
+        .then(data => {
+            displayStats(data);
+        })
+        .catch(error => console.error('Error fetching hero stats:', error));
 }
 
-function updateHeroImage(heroName) {
-    const heroImage = document.getElementById('heroImage');
-    if (heroImage) {
-        heroImage.src = `static/img/${heroName}.jpg`; // Sets the new image path
-        heroImage.alt = heroName; // Updates alt text
-    }
+heroStatsBtn.addEventListener('click', function() {
+    const heroName = document.getElementById('heroImage').alt; // This needs to match exactly with the JSON filenames
+    fetchHeroStats(heroName);
+});
+
+function displayStats(data) {
+    const modal = document.getElementById('myModal');
+    const modalBody = document.getElementById('modalBody');
+    modalBody.innerHTML = ''; // Clear previous data
+
+    Object.keys(data).forEach(key => {
+        const value = data[key];
+        if (typeof value === 'object' && value !== null) {
+            modalBody.innerHTML += `<p><strong>${key}:</strong></p>`; // Add a section title for the category
+            Object.keys(value).forEach(subKey => {
+                modalBody.innerHTML += `<p>${subKey}: ${value[subKey]}</p>`; // Display each stat
+            });
+        } else {
+            modalBody.innerHTML += `<p><strong>${key}:</strong> ${value}</p>`; // Display scalar values directly
+        }
+    });
+
+    modal.style.display = "block";
 }
