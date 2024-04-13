@@ -19,7 +19,7 @@ class modify_json:
         
         json_object = json.dumps(response_data)
 
-        with open('/info/user_info/user_info.json') as outfile:
+        with open(r'C:\Users\ikemmaka\Documents\programming\hoghacks\You-Vs-Your-Heros\info\user_info\user_info.json', 'w') as outfile:
             outfile.write(json_object)
 
         return response_data

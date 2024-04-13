@@ -1,18 +1,1 @@
-{
-    "name": "",
-    "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
-    },
-    "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
-    },
-    "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
-    }
-}
+{"name": "emeka", "curl": "", "squat": "", "bench": "", "run": "", "swim": "", "climb": "", "sprint": "", "jump": "", "reaction": ""}
