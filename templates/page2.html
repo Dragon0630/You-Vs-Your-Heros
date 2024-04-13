@@ -14,7 +14,8 @@
             <div id="playerStats">
                 <h1>Player</h1>
                 <img src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
-                <button class="button" id="player_stat" onclick="playerStat()">Stats</button>
+                <button class="button" id="player_stat" onclick="fetchPlayerStats()">Stats</button>
+                <div id="statsDisplay"></div>
             </div>
             <div id="gameContainer">
                 <canvas id="webgl-canvas" width="300px" height="300px"></canvas>
@@ -28,5 +29,19 @@
             <h1>Summary</h1>
         </div>
     </div>
+    <script>
+        function fetchPlayerStats() {
+            fetch('/get_player_stats')
+            .then(response => response.json())
+            .then(data => {
+                const displayDiv = document.getElementById('statsDisplay');
+                displayDiv.innerHTML = ''; // Clear previous data
+                Object.keys(data).forEach(key => {
+                    displayDiv.innerHTML += `<p><strong>${key}:</strong> ${data[key]}</p>`;
+                });
+            })
+            .catch(error => console.error('Error fetching player stats:', error));
+        }
+    </script>
 {% endblock %}
 </html>

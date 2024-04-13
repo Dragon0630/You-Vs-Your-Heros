@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from classes import modify_json as JSON
+import json
 
 app = Flask(__name__)
 
@@ -18,5 +19,13 @@ def update_text():
 @app.route('/comparison', methods = ['GET'])
 def compare():
     return render_template("page2.html")
+
+
+@app.route('/get_player_stats', methods = ['GET'])
+def get_player_stats():
+    with open(r'.\info\user_info\user_info.json', 'r') as json_file:
+        data = json.load(json_file)
+    return jsonify(data)
+
 if __name__ == "__main__":
     app.run(debug=True)
