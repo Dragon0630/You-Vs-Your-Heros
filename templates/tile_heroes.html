@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="/static/js/main.js"></script>
+{% block header %}
+    <meta charset="UTF-8">
+    <title>{% block title %}You vs Your Heros{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+{% endblock %}
+{% block page_content %}
+<body>
+    <body>
+        <div id="tileContainer">
+            <!-- Tiles will be dynamically added here -->
+        </div>
+    
+        <script>
+            // JavaScript code to fetch and display JSON data as tiles
+            fetch('info\\data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const tileContainer = document.getElementById('tileContainer');
+                    data.forEach(item => {
+                        const tile = document.createElement('div');
+                        tile.classList.add('tile');
+                        tile.innerHTML = `<h2>${item.title}</h2><p>${item.description}</p>`;
+                        tileContainer.appendChild(tile);
+                    });
+                })
+                .catch(error => console.error('Error fetching JSON:', error));
+        </script>
+</body>
+{% endblock %}
+</html>

@@ -15,15 +15,26 @@
         <div id="upperContainer">
             <div id="playerStats">
                 <h1>Player</h1>
+<<<<<<< HEAD
                 <img src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
                 <button class="button" id="player_stat">Stats</button>
+=======
+                <img src="/static/img/user{{choice}}.webp" alt="Placeholder Image" width="300" height="350">
+                <button class="button" id="player_stat" onclick="fetchPlayerStats()">Stats</button>
+>>>>>>> 8c4a4bdd7b8095085226e34f5a87af987afbfe6d
             </div>
             <div id="gameContainer">
                 <button class="button" id="startGame">Start Game</button>
             </div>
             <div id="heroStats">
+<<<<<<< HEAD
                 <h1>Hero</h1>
                 <img id="heroImage" src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
+=======
+                <h1>{{ heroName }}</h1>
+                <img id="heroImage" src="/static/img/{{ safeHeroName }}.jpg" height=350px alt="Hero Image">        
+                <button class="button" id="hero_stat" onclick="fetchHeroStats()">Stats</button>
+>>>>>>> 8c4a4bdd7b8095085226e34f5a87af987afbfe6d
             </div>
         </div>
         <div id="summaryBox">
@@ -39,7 +50,6 @@
         <div id="modalBody"></div>
       </div>
     </div>
-
     <!-- JavaScript to handle the modal and fetch data -->
     <script src="/static/js/playerStats.js"></script>
 </body>

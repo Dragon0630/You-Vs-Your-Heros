@@ -126,6 +126,35 @@ a{
     text-decoration: none;
     color: var(--primary-text-color);
 }
+
+/* Styles for the tile container */
+#tileContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed */
+}
+
+/* Styles for individual tiles */
+.tile {
+    width: 200px; /* Adjust width as needed */
+    margin: 10px; /* Adjust margin as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Styles for tile title */
+.tile h2 {
+    margin-top: 0;
+}
+
+/* Styles for tile description */
+.tile p {
+    margin-bottom: 0;
+}
+
+
 /*-------------------------------Atribute Box------------------------------*/
 #Strength, #Endurance, #Agility {
     padding: 5px;

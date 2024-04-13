@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify, send_from_directory, g
 from classes import modify_json as JSON
 import json
 from classes.computation import Computation
@@ -11,14 +11,6 @@ app = Flask(__name__)
 def home():
     return render_template("base.html")
 
-@app.route("/catalog",methods=['POST'])
-def catalog():
-    return render_template("catalog.html")
-
-@app.route("/profile",methods=['POST'])
-def profile():
-    return render_template("profile.html")
-
 @app.route('/modify', methods = ['POST'])
 def update_text():
     if request.method == 'POST':
@@ -30,13 +22,17 @@ def update_text():
 @app.route('/comparison', methods = ['GET'])
 def compare():
     comp = Computation()
+    indexNumber = comp.randomNumber()
     results = comp.compare()
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8c4a4bdd7b8095085226e34f5a87af987afbfe6d
     hero_name = results['hero_name']
     score_result = results['score_result']
     
     #generate_image()
-    return render_template("page2.html", heroName=hero_name, scoreResult=score_result, safeHeroName=results['safe_hero_name'])
+    return render_template("page2.html", heroName=hero_name, scoreResult=score_result, safeHeroName=results['safe_hero_name'], choice=indexNumber)
 
 @app.route('/get_player_stats', methods = ['GET'])
 def get_player_stats():
