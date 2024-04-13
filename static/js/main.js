@@ -104,3 +104,7 @@ function backClick(){
             break;
     }
 }
+
+function playerStat(){
+    
+}

@@ -252,3 +252,14 @@ input[type="number"]:focus{
     width: 820px;
     background-color: #3498db;
 }
+
+#playerStats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+
+#player_stat{
+    width: 100%;
+}

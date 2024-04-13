@@ -20,15 +20,10 @@ class modify_json:
         response_data = {'name': name, 'curl':curl, 'squat': squat, 'bench':bench, 'run':run, 'swim': swim, 'climb':climb, 'sprint':sprint, 'jump':jump, 'reaction':reaction }
         
         json_object = json.dumps(response_data)
-        
-        # return(json_object)
+        file_name='classes/test.json'
 
-        # with open("test.json", "w") as outfile:
-        #     json.dump(response_data, outfile)
-        fout = open("test.json", "w")
-        fout.write(json_object)
-        fout.flush()
-        fout.close()
+        with open(file_name, 'w') as file:
+            json.dump(response_data, file)
 
         return response_data
   
