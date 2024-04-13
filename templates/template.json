@@ -1,18 +1,18 @@
 {
     "name": "",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "", 
+        "squat": "", 
+        "bench": "" 
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "", 
+        "swim": "", 
+        "climb": "" 
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "", 
+        "jump": "", 
+        "reaction": "" 
     }
 }

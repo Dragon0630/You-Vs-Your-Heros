@@ -1,18 +1,18 @@
 {
     "name": "Chani",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "20",
+        "squat": "120",
+        "bench": "50"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "1",
+        "swim": "0",
+        "climb": "30"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "12",
+        "jump": "24",
+        "reaction": "0.4"
     }
 }

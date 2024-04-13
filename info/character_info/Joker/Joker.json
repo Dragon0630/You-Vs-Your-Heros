@@ -1,18 +1,18 @@
 {
     "name": "Joker",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "20",
+        "squat": "100",
+        "bench": "70"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "1.5",
+        "swim": "35",
+        "climb": "10"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "12",
+        "jump": "22",
+        "reaction": "0.5"
     }
 }

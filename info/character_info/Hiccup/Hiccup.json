@@ -1,18 +1,18 @@
 {
     "name": "Hiccup",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "20",
+        "squat": "100",
+        "bench": "75"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "1",
+        "swim": "25",
+        "climb": "15"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "12",
+        "jump": "25",
+        "reaction": "0.4"
     }
 }

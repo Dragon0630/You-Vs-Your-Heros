@@ -1,18 +1,18 @@
 {
     "name": "Gaston",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "75",
+        "squat": "300",
+        "bench": "275"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "5",
+        "swim": "150",
+        "climb": "35"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "10",
+        "jump": "36",
+        "reaction": "0.4"
     }
 }

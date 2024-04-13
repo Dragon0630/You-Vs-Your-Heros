@@ -1,18 +1,18 @@
 {
     "name": "Maui",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "100",
+        "squat": "500",
+        "bench": "375"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "1.5",
+        "swim": "25",
+        "climb": "20"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "15",
+        "jump": "22",
+        "reaction": "0.4"
     }
 }

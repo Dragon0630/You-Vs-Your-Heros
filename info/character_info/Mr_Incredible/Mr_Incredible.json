@@ -1,18 +1,18 @@
 {
     "name": "Mr. Incredible",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "100",
+        "squat": "500",
+        "bench": "375"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "1",
+        "swim": "25",
+        "climb": "20"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "11",
+        "jump": "30",
+        "reaction": "0.5"
     }
 }

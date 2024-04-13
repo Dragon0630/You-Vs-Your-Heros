@@ -1,18 +1,18 @@
 {
     "name": "Ash Ketchum",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "15",
+        "squat": "200",
+        "bench": "90"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "1.5",
+        "swim": "100",
+        "climb": "30"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "17",
+        "jump": "36",
+        "reaction": "0.35"
     }
 }

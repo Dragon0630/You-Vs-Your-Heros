@@ -1,18 +1,18 @@
 {
     "name": "Spiderman",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "135",
+        "squat": "400",
+        "bench": "200"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "5",
+        "swim": "75",
+        "climb": "80"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "9",
+        "jump": "92",
+        "reaction": "0.15"
     }
 }

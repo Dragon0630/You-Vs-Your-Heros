@@ -1,18 +1,18 @@
 {
     "name": "Barney The Dinosaur",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "100",
+        "squat": "500",
+        "bench": "200"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "0.5",
+        "swim": "0",
+        "climb": "5"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "25",
+        "jump": "11",
+        "reaction": "0.6"
     }
 }

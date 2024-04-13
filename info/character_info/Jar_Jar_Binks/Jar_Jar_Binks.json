@@ -1,18 +1,18 @@
 {
     "name": "Jar Jar Binks",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "10",
+        "squat": "50",
+        "bench": "30"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "2",
+        "swim": "200",
+        "climb": "15"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "12",
+        "jump": "27",
+        "reaction": "0.6"
     }
 }

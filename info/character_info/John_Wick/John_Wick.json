@@ -1,18 +1,18 @@
 {
     "name": "John Wick",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "45",
+        "squat": "200",
+        "bench": "140"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "3",
+        "swim": "75",
+        "climb": "25"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "12",
+        "jump": "28",
+        "reaction": "0.3"
     }
 }

@@ -1,18 +1,18 @@
 {
     "name": "Frodo Baggins",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "5",
+        "squat": "15",
+        "bench": "12"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "0.3",
+        "swim": "15",
+        "climb": "5"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "30",
+        "jump": "18",
+        "reaction": "0.5"
     }
 }

@@ -1,18 +1,18 @@
 {
     "name": "Frank Castle",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "50",
+        "squat": "300",
+        "bench": "250"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "2",
+        "swim": "100",
+        "climb": "15"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "14",
+        "jump": "38",
+        "reaction": "0.4"
     }
 }

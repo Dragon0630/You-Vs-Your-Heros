@@ -1,18 +1,18 @@
 {
     "name": "Shrek",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "100",
+        "squat": "225",
+        "bench": "150"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "0.3",
+        "swim": "25",
+        "climb": "15"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "13",
+        "jump": "17",
+        "reaction": "0.5"
     }
 }

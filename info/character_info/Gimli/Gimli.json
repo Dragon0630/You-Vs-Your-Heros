@@ -1,18 +1,18 @@
 {
     "name": "Gimli",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "80",
+        "squat": "300",
+        "bench": "130"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "1",
+        "swim": "25",
+        "climb": "10"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "18",
+        "jump": "18",
+        "reaction": "0.5"
     }
 }

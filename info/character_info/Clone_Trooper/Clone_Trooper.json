@@ -1,18 +1,18 @@
 {
     "name": "Clone Trooper",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "50",
+        "squat": "250",
+        "bench": "200"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "3",
+        "swim": "175",
+        "climb": "30"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "12",
+        "jump": "42",
+        "reaction": "0.4"
     }
 }

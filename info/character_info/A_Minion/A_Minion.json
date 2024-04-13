@@ -1,18 +1,18 @@
 {
     "name": "A Minion",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "22",
+        "squat": "44",
+        "bench": "33"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "0.62",
+        "swim": "109",
+        "climb": "16.4"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "20",
+        "jump": "12",
+        "reaction": "0.6"
     }
 }

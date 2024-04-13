@@ -1,18 +1,18 @@
 {
     "name": "Legolas",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "35",
+        "squat": "125",
+        "bench": "115"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "7",
+        "swim": "150",
+        "climb": "40"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "9.7",
+        "jump": "31",
+        "reaction": "0.3"
     }
 }

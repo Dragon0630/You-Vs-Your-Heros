@@ -1,18 +1,18 @@
 {
     "name": "Snorlax",
     "strength": {
-        "curl": "",
-        "squat": "",
-        "bench": ""
+        "curl": "50",
+        "squat": "400",
+        "bench": "300"
     },
     "endurance": {
-        "run": "",
-        "swim": "",
-        "climb": ""
+        "run": "0",
+        "swim": "0",
+        "climb": "5"
     },
     "agility": {
-        "sprint": "",
-        "jump": "",
-        "reaction": ""
+        "sprint": "30",
+        "jump": "5",
+        "reaction": "0.75"
     }
 }
