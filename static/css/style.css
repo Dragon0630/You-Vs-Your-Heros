@@ -18,6 +18,7 @@ body {
     align-items: center;
     justify-content: center;
     background-image: url('/static/img/background.png');
+    background-size: cover;
 }
 
 #content{
