@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/javascript" src="../static/js/main.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}You vs Your Heros{% endblock %}</title>
@@ -11,6 +12,6 @@
     <p>Please input your 100m dash time: <input type="number" id="60m_dash" name="Agility"></p>
     <p>Please input your max benchpress: <input type="number" id="benchpress" name="Strength"></p>
     <p>Please input your max run distance: <input type="number" id="distance" name="Stamina"></p>
-    <button class="button" id="submit_button">Submit</button>
+    <button class="button" id="submit_button" onclick="isValid();">Submit</button>
 </body>
 </html>
