@@ -5,11 +5,12 @@ from classes import computation as comp
 
 app = Flask(__name__)
 
-@app.route("/")
+
+@app.route("/You-Vs-Your-Heros/")
 def home():
     return render_template("base.html")
 
-@app.route('/modify', methods = ['POST'])
+@app.route('/You-Vs-Your-Heros/modify', methods = ['POST'])
 def update_text():
     if request.method == 'POST':
         response_json = JSON.modify_json.__init__(request.get_json())
@@ -17,19 +18,19 @@ def update_text():
     else:
         return 405
 
-@app.route('/comparison', methods = ['GET'])
+@app.route('/You-Vs-Your-Heros/comparison', methods = ['GET'])
 def compare():
     winner = comp.computation.__init__()
     return render_template("page2.html")
 
 
-@app.route('/get_player_stats', methods = ['GET'])
+@app.route('/You-Vs-Your-Heros/get_player_stats', methods = ['GET'])
 def get_player_stats():
     with open(r'.\\info\\user_info\\user_info.json', 'r') as json_file:
         data = json.load(json_file)
     return jsonify(data)
 
-@app.route("/webgl", methods = ['GET', 'POST'])
+@app.route("/You-Vs-Your-Heros/webgl", methods = ['GET', 'POST'])
 def index():
     return render_template("/unity/index.html")
 
