@@ -29,8 +29,14 @@ def update_text():
 
 @app.route('/comparison', methods = ['GET'])
 def compare():
+<<<<<<< HEAD
+    winner = comp = Computation()
+    #generate_image()
+    return render_template("page2.html")
+=======
     comp = Computation()
     results = comp.compare()
+>>>>>>> 1dda4aba4cb0986e996d8598b4c928e487ebfbeb
 
     hero_name = results['hero_name']
     score_result = results['score_result']
