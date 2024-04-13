@@ -1,99 +1,53 @@
 import json
 import random
 
-class computation:
-    def __init__():
-        file_name=r'.\info\user_info\user_info.json'
-        f = open(file_name)
+class Computation:
+    def __init__(self):
+        self.file_name = './info/user_info/user_info.json'
+        self.user_data = self.load_json(self.file_name)
+        self.hero_data = None
+        self.characters = [
+            "A_Minion", "Ash_Ketchum", "Barney_The_Dinosaur", "Chani", "Clone_Trooper",
+            "Frank_Castle", "Frodo_Baggins", "Gaston", "Gimli", "Gru",
+            "Hiccup", "Jack_Sparrow", "Jar_Jar_Binks", "John_Wick", "Joker",
+            "Legolas", "Maui", "Mr_Incredible", "Paul_Atreides", "Shrek",
+            "Snorlax", "spiderman"
+        ]
 
-        data = json.load(f)
+    def load_json(self, file_path):
+        with open(file_path, 'r') as file:
+            return json.load(file)
 
-        user_strength_scores = []
-        user_agility_scores = []
-        user_endurance_scores = []
+    def choose_hero(self):
+        chosen_hero = random.choice(self.characters)
+        hero_file = f'./info/character_info/{chosen_hero}/{chosen_hero}.json'
+        self.hero_data = self.load_json(hero_file)
 
-        hero_strength_scores = []
-        hero_agility_scores = []
-        hero_endurance_scores = []
-
-        Minion = ["/../info/character_info/A_Minion/A_Minion.json"]
-        Ash = ["/../info/character_info/Ash_Ketchum/Ash_Ketchum.json"]
-        Barney = ["/../info/character_info/Barney_The_Dinosaur/Barney_The_Dinosaur.json"]
-        Chani = ["/../info/character_info/Chani/Chani.json"]
-        Clone = ["/../info/character_info/Clone_Trooper/Clone_Trooper.json"]
-        Frank = ["/../info/character_info/Frank_Castle/Frank_Castle.json"]
-        Frodo = ["/../info/character_info/Frodo_Baggins/Frodo_Baggins.json"]
-        Gaston = ["/../info/character_info/Gaston/Gaston.json"]
-        Gimli = ["/../info/character_info/Gimli/Gimli.json"]
-        Gru = ["/../info/character_info/Gru/Gru.json"]
-        Hiccup = ["/../info/character_info/Hiccup/Hiccup.json"]
-        Jack = ["/../info/character_info/Jack_Sparrow/Jack_Sparrow.json"]
-        Jar_Jar = ["/../info/character_info/Jar_Jar_Binks/Jar_Jar_Binks.json"]
-        John = ["/../info/character_info/John_Wick/John_Wick.json"]
-        Joker = ["/../info/character_info/Joker/Joker.json"]
-        Legolas = ["/../info/character_info/Legolas/Legolas.json"]
-        Maui = ["/../info/character_info/Maui/Maui.json"]
-        Mr_Incredible = ["/../info/character_info/Mr_Incredible/Mr_Incredible.json"]
-        Paul = ["/../info/character_info/Paul_Atreides/Paul_Atreides.json"]
-        Shrek = ["/../info/character_info/Shrek/Shrek.json"]
-        Snorlax = ["/../info/character_info/Snorlax/Snorlax.json"]
-        Spiderman = ["/../info/character_info/spiderman/spiderman.json"]
-
-
-        character_list = [Minion, Ash, Barney, Chani, Clone, Frank, Frodo, Gaston, Gimli, Gru, Hiccup, Jack, Jar_Jar, John, Joker, Legolas, Maui,
-                          Mr_Incredible, Paul, Shrek, Snorlax, Spiderman]
-        
-        hero = random.choice(character_list)
-
-        for user_s_category in data["Strength"]:
-            user_strength_scores.append(data["Strength"][user_s_category])
-        
-        for user_a_category in data["Agility"]:
-            user_agility_scores.append(data["Agility"][user_a_category])
-
-        for user_e_category in data["Endurance"]:
-            user_endurance_scores.append(data["Endurance"][user_e_category])
-
-        f.close()
-        f = open(hero[0])
-        hero_data = json.load(f)
-        
-        for hero_s_category in hero_data["Strength"]:
-            hero_strength_scores.append(data["Strength"][hero_s_category])
-        
-        for hero_a_category in hero_data["Agility"]:
-            hero_agility_scores.append(data["Agility"][hero_a_category])
-
-        for hero_e_category in hero_data["Endurance"]:
-            hero_endurance_scores.append(data["Endurance"][hero_e_category])
-
-        f.close()
-
-        hero_score = 0
+    def calculate_scores(self):
+        # Assuming nested data handling under each category
         user_score = 0
-        for x in user_strength_scores:
-            if user_strength_scores[x] > hero_strength_scores[x]:
-                user_score += 1
-            if user_strength_scores[x] < hero_strength_scores[x]:
-                hero_score += 1
-            else:
-                pass
-                
-        for x in user_endurance_scores:
-            if user_endurance_scores[x] > hero_endurance_scores[x]:
-                user_score += 1
-            if user_endurance_scores[x] < hero_endurance_scores[x]:
-                hero_score += 1
-            else:
-                pass
+        hero_score = 0
 
-        for x in user_agility_scores:
-            if user_agility_scores[x] > hero_agility_scores[x]:
-                user_score += 1
-            if user_agility_scores[x] < hero_agility_scores[x]:
-                hero_score += 1
-            else:
-                pass
-        
-        # Closing file
-        
+        for category in ["Strength", "Agility", "Endurance"]:
+            user_scores = self.user_data.get(category, {})
+            hero_scores = self.hero_data.get(category, {})
+
+            for key, user_val in user_scores.items():
+                hero_val = hero_scores.get(key, 0)  # Assume default to 0 if not present
+
+                if user_val > hero_val:
+                    user_score += 1
+                elif user_val < hero_val:
+                    hero_score += 1
+
+        return "User" if user_score > hero_score else "Hero"
+
+    def compare(self):
+        self.choose_hero()
+        return self.calculate_scores()
+
+# Usage
+if __name__ == "__main__":
+    comp = Computation()
+    winner = comp.compare()
+    print(f"The winner is: {winner}")
