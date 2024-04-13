@@ -257,7 +257,7 @@ input[type="number"]:focus{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 75%;
     margin: 20px;
     padding: 20px;
     background-color: white;
