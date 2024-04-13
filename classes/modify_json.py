@@ -13,6 +13,6 @@ class modify_json:
         jump = data['agility']['jump']
         reaction = data['agility']['reaction']
         response_data = {'message': 'Data received successfully', 'name': name, 'curl':curl  }
-        return jsonify(response_data), 200
+        return 200
 
     
