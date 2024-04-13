@@ -1,4 +1,6 @@
 from flask import jsonify
+import json
+
 
 class modify_json:
     def __init__(data):
@@ -12,7 +14,12 @@ class modify_json:
         sprint = data['agility']['sprint']
         jump = data['agility']['jump']
         reaction = data['agility']['reaction']
-        response_data = {'message': 'Data received successfully', 'name': name, 'curl':curl  }
-        return 200
+        response_data = {'name': name, 'curl':curl, 'squat': squat, 'bench':bench, 'run':run, 
+                         'swim': swim, 'climb':climb, 'sprint':sprint, 'jump':jump, 'reaction':reaction }
+        
+        json_object = json.dumps(response_data)
 
-    
+        with open('/info/user_info/user_info.json') as outfile:
+            outfile.write(json_object)
+
+        return response_data
