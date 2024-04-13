@@ -126,7 +126,7 @@ input[type="number"] {
     box-sizing: border-box; /* Includes padding and border in the element's total width and height */
     font-size: 16px; /* Font size for better readability */
     background-color: white; /* Background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
@@ -156,7 +156,7 @@ input[type="number"]:focus{
     box-sizing: border-box; /* Includes padding and border in the element's total width and height */
     font-size: 16px; /* Font size for better readability */
     background-color: white; /* Background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
