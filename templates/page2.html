@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<script type="text/javascript" src="../static/js/main.js"></script>
-{% block header %}
+<head>
     <meta charset="UTF-8">
-    <title>{% block title %}You vs Your Heros{% endblock %}</title>
+    <title>You vs Your Heros</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/modalStyles.css">
     <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-{% endblock %}
-{% block page_content %}
+</head>
+<body>
     <div id="content2">
         <div id="upperContainer">
-            <canvas id="myCanvas" width="400" height="400"></canvas>
             <div id="playerStats">
                 <h1>Player</h1>
                 <img src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
                 <button class="button" id="player_stat" onclick="fetchPlayerStats()">Stats</button>
-                <div id="statsDisplay"></div>
             </div>
             <div id="gameContainer">
                 <canvas id="webgl-canvas" width="300px" height="300px"></canvas>
@@ -30,19 +28,17 @@
             <h1>Summary</h1>
         </div>
     </div>
-    <script>
-        function fetchPlayerStats() {
-            fetch('/get_player_stats')
-            .then(response => response.json())
-            .then(data => {
-                const displayDiv = document.getElementById('statsDisplay');
-                displayDiv.innerHTML = ''; // Clear previous data
-                Object.keys(data).forEach(key => {
-                    displayDiv.innerHTML += `<p><strong>${key}:</strong> ${data[key]}</p>`;
-                });
-            })
-            .catch(error => console.error('Error fetching player stats:', error));
-        }
-    </script>
-{% endblock %}
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Player Stats</h2>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- JavaScript to handle the modal and fetch data -->
+    <script src="/static/js/playerStats.js"></script>
+</body>
 </html>

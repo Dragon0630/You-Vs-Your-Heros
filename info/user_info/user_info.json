@@ -1,1 +1,1 @@
-{"name": "emeka", "curl": "", "squat": "", "bench": "", "run": "", "swim": "", "climb": "", "sprint": "", "jump": "", "reaction": ""}
+{"name": "test_emeka", "Strength": {"curl": "111", "squat": "3342", "bench": "3434"}, "Endurance": {"run": "1234", "swim": "445", "climb": "345"}, "Agility": {"sprint": "4455", "jump": "345", "reaction": "344"}}
