@@ -1,7 +1,7 @@
 :root{
     /* Colors Edit here only */
-    --background-color: #333;
-    --primary-color: #3498db;
+    --background-color: #697D73;
+    --primary-color: #71A78D;
     --primary-text-color: #333;
     --secondary-color: #f39c12;
     --border-color: #ccc;
@@ -17,8 +17,35 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/static/img/background.png');
-    background-size: cover;
+    overflow: hidden;
+    animation: rotateGradient 260s linear infinite;
+    background: linear-gradient(to right, 
+    #71A78D 0%, 
+    #5E8C79 7%, 
+    #507C67 14%, 
+    #456F5A 21%, 
+    #41524A 28%, 
+    #3D453D 35%, 
+    #20332A 42%, 
+    #244029 49%, 
+    #23402A 56%, 
+    #2E472F 63%, 
+    #34523A 70%, 
+    #3C5F3E 77%, 
+    #45623A 84%, 
+    #4F683A 91%, 
+    #57733A 98%, 
+    #68983A 100%);
+    background-size: 1400% 1400%;
+}
+
+@keyframes rotateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 #content{
