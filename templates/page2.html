@@ -18,17 +18,16 @@
                 <button class="button" id="player_stat" onclick="fetchPlayerStats()">Stats</button>
             </div>
             <div id="gameContainer">
-                <button class="button" id="startGame">Start Game</button>
+                <button class="button" id="startGame" onclick="startGame()"> </button>
             </div>
             <div id="heroStats">
-                <h1>Hero</h1>
-                <img src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
+                <h1>{{ heroName }}</h1>
+                <img id="heroImage" src="path/to/default_image.jpg" alt="Hero Image">
+                <button class="button" id="hero_stat" onclick="fetchEnemyStats()">Stats</button>
             </div>
         </div>
-        <div id="summaryBox">
-            <h1>Summary</h1>
-        </div>
     </div>
+    <div id="overlay"></div>
 
     <!-- Modal -->
     <div id="myModal" class="modal">

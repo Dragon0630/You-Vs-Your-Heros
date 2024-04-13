@@ -106,10 +106,6 @@ function backClick(){
     }
 }
 
-function playerStat(){
-    
-}
-
 function webgl(){
     var canvas = document.getElementById("myCanvas")
     var gl = canvas.getContext("webgl");
@@ -174,4 +170,10 @@ gl.clear(gl.COLOR_BUFFER_BIT);
 // Draw the triangle
 gl.drawArrays(gl.TRIANGLES, 0, 3);
 
+}
+
+
+function startGame(){
+    alert('hey');
+    document.getElementById('unityIFrame').style.display = 'flex';
 }

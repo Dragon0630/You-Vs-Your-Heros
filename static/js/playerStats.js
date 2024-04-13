@@ -49,3 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+
+
+function startGame(){
+    document.getElementById('unityIFrame').style.display = 'block'; // Show the iframe
+    document.getElementById('overlay').style.display = 'block'; // Show the overlay
+}
