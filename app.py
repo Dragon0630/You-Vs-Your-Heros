@@ -29,17 +29,12 @@ def update_text():
 
 @app.route('/comparison', methods = ['GET'])
 def compare():
-<<<<<<< HEAD
-    winner = comp = Computation()
-    #generate_image()
-    return render_template("page2.html")
-=======
     comp = Computation()
     results = comp.compare()
->>>>>>> 1dda4aba4cb0986e996d8598b4c928e487ebfbeb
 
     hero_name = results['hero_name']
     score_result = results['score_result']
+    
     #generate_image()
     return render_template("page2.html", heroName=hero_name, scoreResult=score_result, safeHeroName=results['safe_hero_name'])
 
@@ -48,6 +43,7 @@ def get_player_stats():
     with open(r'.\\info\\user_info\\user_info.json', 'r') as json_file:
         data = json.load(json_file)
     return jsonify(data)
+
 
 @app.route("/webgl", methods = ['GET', 'POST'])
 def index():

@@ -1,7 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to fetch and display player stats
-    window.fetchPlayerStats = function() {
-        fetch('/get_player_stats')
+    // Set up event listeners for modal interactions and any other initializations
+    setupModalInteractions();
+    setupButtonListeners();
+});
+
+function setupModalInteractions() {
+    const modal = document.getElementById('myModal');
+    const close = document.getElementsByClassName("close")[0];
+
+    // Close the modal when the close button (x) is clicked
+    close.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Close the modal if the user clicks anywhere outside of the modal content
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+}
+
+function setupButtonListeners() {
+    // Add event listeners for other buttons if necessary
+    const startGameBtn = document.getElementById('startGame');
+    if (startGameBtn) {
+        startGameBtn.addEventListener('click', startGame);
+    }
+
+    const playerStatsBtn = document.getElementById('player_stat');
+    if (playerStatsBtn) {
+        playerStatsBtn.addEventListener('click', fetchPlayerStats);
+    }
+}
+
+function fetchPlayerStats() {
+    fetch('/get_player_stats')
         .then(response => response.json())
         .then(data => {
             const modal = document.getElementById('myModal');
@@ -31,33 +65,17 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.display = "block";
         })
         .catch(error => console.error('Error fetching player stats:', error));
-    };
+}
 
-    // Get the modal and close button elements
-    const modal = document.getElementById('myModal');
-    const close = document.getElementsByClassName("close")[0];
-
-    // Close the modal when the close button (x) is clicked
-    close.onclick = function() {
-        modal.style.display = "none";
-    };
-
-    // Close the modal if the user clicks anywhere outside of the modal content
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
-});
-
-
-function startGame(){
+function startGame() {
     document.getElementById('unityIFrame').style.display = 'block'; // Show the iframe
     document.getElementById('overlay').style.display = 'block'; // Show the overlay
 }
 
-
 function updateHeroImage(heroName) {
-    document.getElementById('heroImage').src = 'static/img/${heroName}' + '.jpg'; // Sets the new image path
-    document.getElementById('heroImage').alt = heroName; // Updates alt text
+    const heroImage = document.getElementById('heroImage');
+    if (heroImage) {
+        heroImage.src = `static/img/${heroName}.jpg`; // Sets the new image path
+        heroImage.alt = heroName; // Updates alt text
+    }
 }
