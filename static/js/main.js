@@ -175,5 +175,3 @@ gl.clear(gl.COLOR_BUFFER_BIT);
 gl.drawArrays(gl.TRIANGLES, 0, 3);
 
 }
-
-window.onload = webgl();
