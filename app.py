@@ -11,9 +11,9 @@ app = Flask(__name__)
 def home():
     return render_template("base.html")
 
-@app.route("/catalog",methods=['POST'])
+@app.route("/tile_heroes",methods=['GET'])
 def catalog():
-    return render_template("catalog.html")
+    return render_template("tile_heroes.html")
 
 @app.route("/profile",methods=['POST'])
 def profile():
