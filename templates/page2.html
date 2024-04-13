@@ -4,42 +4,29 @@
 {% block header %}
     <meta charset="UTF-8">
     <title>{% block title %}You vs Your Heros{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/img/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 {% endblock %}
 {% block page_content %}
-    <div id="content">
-        <table>
-            <thead>
-                <tr>
-                    <th>User</th>
-                    <th></th>
-                    <th>Character</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Users Name</td>
-                    <td></td>
-                    <td>Characters Name</td>
-                </tr>
-                <tr>
-                    <td>Users Strength Score:</td>
-                    <td></td>
-                    <td>Characters Strength Score:</td>
-                </tr>
-                <tr>
-                    <td>Users Agility Score:</td>
-                    <td></td>
-                    <td>Characters Agility Score</td>
-                </tr>
-                <tr>
-                    <td>Users Enduracne Score:</td>
-                    <td></td>
-                    <td>Characters Endurance Score</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>Instresting summary goes here</p>
+    <div id="content2">
+        <div id="upperContainer">
+            <div id="playerStats">
+                <h1>Player</h1>
+                <img src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
+                <button class="button" id="player_stat" onclick="playerStat()">Stats</button>
+            </div>
+            <div id="gameContainer">
+                <canvas id="webgl-canvas" width="300px" height="300px"></canvas>
+            </div>
+            <div id="heroStats">
+                <h1>Hero</h1>
+                <img src="https://placehold.jp/200x350.png" alt="Placeholder Image" width="200" height="350">
+            </div>
+        </div>
+        <div id="summaryBox">
+            <h1>Summary</h1>
+        </div>
     </div>
 {% endblock %}
 </html>
