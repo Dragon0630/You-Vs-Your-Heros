@@ -78,6 +78,6 @@ body {
 }
 
 #submit_button{
-    display:none;
+    /*display:none;*/
     background-color: var(--secondary-color);
 }

@@ -64,23 +64,17 @@ function modifyJSON() {
     var sprint = document.getElementById('sprint').value;
     var jump = document.getElementById('jump').value;
     var reaction = document.getElementById('reaction').value;
-    const newData = {
+    var newData = {
         name: name,
-        strength: {
-            curl: curl,
-            squat: squat,
-            bench: bench
-        },
-        endurance: {
-            run: run,
-            swim: swim,
-            climb: climb
-        },
-        agility: {
-            sprint: sprint,
-            jump: jump,
-            reaction: reaction
-        },
+        curl: curl,
+        squat: squat,
+        bench: bench,
+        run: run,
+        swim: swim,
+        climb: climb,
+        sprint: sprint,
+        jump: jump,
+        reaction, reaction
     };
 
     // AJAX request to send the data to the server
