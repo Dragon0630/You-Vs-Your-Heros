@@ -7,7 +7,7 @@ class Computation:
         self.user_data = self.load_json(self.file_name)
         self.hero_data = None
         self.characters = [
-            "ash","Barney_The_Dinosaur","chani","Clone_Trooper","frankcastle","Frodo_Baggins","gaston","gimli","gru","hiccup","jack","Jar_Jar_Binks","john","joker","legolas","maul","A_Minion","Mr_incredible","Paul_Atreides","shrek","snorlax","spiderman"
+            "Ash_Ketchum","Barney_The_Dinosaur","chani","Clone_Trooper","Frank_Castle","Frodo_Baggins","gaston","gimli","gru","hiccup","Jack_Sparrow","Jar_Jar_Binks","John_Wick","joker","legolas","maui","A_Minion","Mr_incredible","Paul_Atreides","shrek","snorlax","spiderman"
         ]
 
     def load_json(self, file_path):
@@ -49,7 +49,8 @@ class Computation:
         self.choose_hero()
         score_result = self.calculate_scores()
         hero_name = self.hero_data.get("name", "Unknown Hero")  # Safer access
-        return {'hero_name': hero_name, 'score_result': score_result}
+        safe_hero_name = hero_name.replace(' ', '_')
+        return {'hero_name': hero_name, 'score_result': score_result, 'safe_hero_name': safe_hero_name}
 
 # Usage
 if __name__ == "__main__":

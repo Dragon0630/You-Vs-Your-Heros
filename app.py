@@ -27,7 +27,7 @@ def compare():
     hero_name = results['hero_name']
     score_result = results['score_result']
     #generate_image()
-    return render_template("page2.html", heroName=hero_name, scoreResult=score_result)
+    return render_template("page2.html", heroName=hero_name, scoreResult=score_result, safeHeroName=results['safe_hero_name'])
 
 @app.route('/get_player_stats', methods = ['GET'])
 def get_player_stats():
