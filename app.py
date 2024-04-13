@@ -27,7 +27,7 @@ def get_player_stats():
         data = json.load(json_file)
     return jsonify(data)
 
-@app.route("/webgl")
+@app.route("/webgl", methods = ['GET', 'POST'])
 def index():
     return render_template("/unity/index.html")
 
