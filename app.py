@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/You-Vs-Your-Heros/")
 def home():
-    return render_template("base.html")
+    return render_template("index.html")
 
 @app.route('/You-Vs-Your-Heros/modify', methods = ['POST'])
 def update_text():
