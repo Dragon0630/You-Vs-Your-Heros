@@ -11,6 +11,14 @@ app = Flask(__name__)
 def home():
     return render_template("base.html")
 
+@app.route("/catalog",methods=['POST'])
+def catalog():
+    return render_template("catalog.html")
+
+@app.route("/profile",methods=['POST'])
+def profile():
+    return render_template("profile.html")
+
 @app.route('/modify', methods = ['POST'])
 def update_text():
     if request.method == 'POST':
