@@ -3,8 +3,6 @@ import json
 import requests
 import sqlite3
 
-#api key MdfoNfYe3KAEiHy0FaRvS6o6THPuR8DoWasEp1sF
-
 class modify_json:
     def __init__(data):
         name = data['name']
