@@ -11,7 +11,7 @@
 html, body {
     height: 100%;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Abel", sans-serif;
 }
 body {
     display: flex;
@@ -51,13 +51,12 @@ body {
 #content{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    max-width: 650px;
+    height: 90%;
+    max-width: 60%;
     margin: 0px;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
@@ -67,17 +66,12 @@ body {
 #logo {
     width: 300px;
     height: 300px;
-    margin: 0 auto 30px;
-    display: block;
-    position: relative;
-    top: -11rem;
+    margin: auto;
 }
 
 #nameFields{
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: -11rem;
 }
 
 .input-container {
@@ -85,25 +79,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 #inputBox{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     flex-direction: column;
+    position:relative;
+    width: 100%;
 }
 
 /*-------------------------------Atribute Box------------------------------*/
 #Strength, #Endurance, #Agility {
     padding: 5px;
+    margin: 5px;
     display: none;
     flex-direction: column;
     align-items: center;
-    width: auto;
-    position: relative;
-    top: -11rem;
+    width: 100%;
 }
 
 #Strength h1, #Endurance h1, #Agility h1{
@@ -116,6 +109,7 @@ body {
     font-size: 15px;
     margin-bottom: 1px;
     margin-top:2px;
+    white-space: nowrap;
 }
 
 input::-webkit-outer-spin-button,
@@ -125,7 +119,7 @@ input::-webkit-inner-spin-button {
 }
 input[type="number"] {
     width: 250px; /* Set the width of the input box */
-    padding: 12px 20px; /* Padding inside the input */
+    padding: 10px; /* Padding inside the input */
     margin: 8px 0; /* Margin around the input */
     border: none; /* No border */
     border-radius: 20px; /* Rounded corners */
@@ -151,8 +145,6 @@ input[type="number"]:focus{
 #nameFields{
     display: flex;
     align-items: center;
-    margin: 10px;
-    padding: 5px;
 }
 
 #name {
@@ -190,22 +182,17 @@ input[type="number"]:focus{
     background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
-    margin: 10px;
+    margin:10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
-#navButtons{
-    position: relative;
-    top: -5rem;
-}
-
 #back_button{
     position: absolute;
-    bottom: 10px;
-    left: 10px;
     display: none;
+    left:10px;
+    bottom: 10px;
     justify-content: flex-end;
 }
 
