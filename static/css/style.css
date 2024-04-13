@@ -3,7 +3,7 @@
     --background-color: #697D73;
     --primary-color: #71A78D;
     --primary-text-color: #333;
-    --secondary-color: #f39c12;
+    --secondary-color: #68983A;
     --border-color: #ccc;
     --inputbox-color: #e8f0fe;
 }
@@ -87,8 +87,45 @@ body {
     flex-direction: column;
     position:relative;
     width: 100%;
+
 }
 
+#sidebar {
+    background-color: var(--primary-color);
+    width: 10%;
+    height: 92.2%; /* Adjusted to take full height of content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top; /* Centering sidebar content */
+    left: 192px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+
+.sidebar-button {
+    bottom: 100px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #456F5A;
+    color: var(--primary-text-color);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-button:hover {
+    background-color: #456F5A;
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
 /*-------------------------------Atribute Box------------------------------*/
 #Strength, #Endurance, #Agility {
     padding: 5px;
@@ -220,7 +257,7 @@ input[type="number"]:focus{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 75%;
     margin: 20px;
     padding: 20px;
     background-color: white;
@@ -242,22 +279,6 @@ input[type="number"]:focus{
     text-align: center;
 }
 
-#gameContainer{
-    margin-top:auto;
-    margin-left:50px;
-    margin-right:50px;
-    margin-bottom:5%;
-    width: 300px;
-    height: 300px;
-    background-color: #333;
-    position: relative;
-    top: -4.10em;
-}
-#summaryBox{
-    width: 820px;
-    background-color: #3498db;
-}
-
 #playerStats {
     display: flex;
     flex-direction: column;
@@ -271,7 +292,68 @@ input[type="number"]:focus{
     align-items: center;
 }
 
+#playerStats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+
+#heroStats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+
+#hero_stat{
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
 /*-------------------------------GAME FRAME------------------------------*/
 #unityIFrame{
-    display: none;
+    width: 60%;
+    height: 75%;
+    border: 2px solid #000;
+    position: fixed;
+    left: 20%; /* Centering the iframe - adjust values accordingly */
+    top: 12.5%;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* High z-index to overlay over other content */
+    background: white;
 }
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none; /* Initially hidden */
+    z-index: 999; /* Just below the iframe */
+}
+#gameContainer{
+    display:flex;
+    margin-top:auto;
+    margin-left:50px;
+    margin-right:50px;
+    margin-bottom:5%;
+    width: 250px;
+    height: 300px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+#startGame{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65%;
+    background-color:grey;
+    opacity: 0.2;
+    background-image: url('/static/img/press-start.gif');
+    background-size : 100% 100%;
+}
+

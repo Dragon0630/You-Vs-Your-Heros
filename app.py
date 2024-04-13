@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 from classes import modify_json as JSON
 import json
 from classes.computation import Computation
-from classes.generate_image import generate_image
+#from classes.generate_image import generate_image
 
 app = Flask(__name__)
 
@@ -10,6 +10,14 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template("base.html")
+
+@app.route("/catalog",methods=['POST'])
+def catalog():
+    return render_template("catalog.html")
+
+@app.route("/profile",methods=['POST'])
+def profile():
+    return render_template("profile.html")
 
 @app.route('/modify', methods = ['POST'])
 def update_text():
@@ -21,10 +29,19 @@ def update_text():
 
 @app.route('/comparison', methods = ['GET'])
 def compare():
+<<<<<<< HEAD
     winner = comp = Computation()
     #generate_image()
     return render_template("page2.html")
+=======
+    comp = Computation()
+    results = comp.compare()
+>>>>>>> 1dda4aba4cb0986e996d8598b4c928e487ebfbeb
 
+    hero_name = results['hero_name']
+    score_result = results['score_result']
+    #generate_image()
+    return render_template("page2.html", heroName=hero_name, scoreResult=score_result, safeHeroName=results['safe_hero_name'])
 
 @app.route('/get_player_stats', methods = ['GET'])
 def get_player_stats():
@@ -42,11 +59,11 @@ def serve_unity_files(filename):
     return send_from_directory('unity', filename)
 
 
-@app.route('/get-image')
-def get_image():
-    attributes = request.args.get('attributes')  # Assuming attributes are passed as a query parameter
-    image_path = generate_image(attributes)
-    return send_file(image_path, mimetype='image/png')
+#@app.route('/get-image')
+#def get_image():
+    #attributes = request.args.get('attributes')  # Assuming attributes are passed as a query parameter
+    #image_path = generate_image(attributes)
+    #return send_file(image_path, mimetype='image/png')
 
 
 if __name__ == "__main__":

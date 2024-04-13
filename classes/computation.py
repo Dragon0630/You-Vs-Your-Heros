@@ -7,11 +7,7 @@ class Computation:
         self.user_data = self.load_json(self.file_name)
         self.hero_data = None
         self.characters = [
-            "A_Minion", "Ash_Ketchum", "Barney_The_Dinosaur", "Chani", "Clone_Trooper",
-            "Frank_Castle", "Frodo_Baggins", "Gaston", "Gimli", "Gru",
-            "Hiccup", "Jack_Sparrow", "Jar_Jar_Binks", "John_Wick", "Joker",
-            "Legolas", "Maui", "Mr_Incredible", "Paul_Atreides", "Shrek",
-            "Snorlax", "spiderman"
+            "Ash_Ketchum","Barney_The_Dinosaur","chani","Clone_Trooper","Frank_Castle","Frodo_Baggins","gaston","gimli","gru","hiccup","Jack_Sparrow","Jar_Jar_Binks","John_Wick","joker","legolas","maui","A_Minion","Mr_incredible","Paul_Atreides","shrek","snorlax","spiderman"
         ]
 
     def load_json(self, file_path):
@@ -24,7 +20,6 @@ class Computation:
         self.hero_data = self.load_json(hero_file)
 
     def calculate_scores(self):
-        # Assuming nested data handling under each category
         user_score = 0
         hero_score = 0
 
@@ -33,7 +28,15 @@ class Computation:
             hero_scores = self.hero_data.get(category, {})
 
             for key, user_val in user_scores.items():
-                hero_val = hero_scores.get(key, 0)  # Assume default to 0 if not present
+                hero_val = hero_scores.get(key, 0)  # Default to 0 if not present
+
+                # Ensure both values are integers before comparison
+                try:
+                    user_val = int(user_val)
+                    hero_val = int(hero_val)
+                except ValueError:
+                    print(f"Error converting scores to integers: user_val={user_val}, hero_val={hero_val}")
+                    continue  # Skip this iteration if there's a conversion error
 
                 if user_val > hero_val:
                     user_score += 1
@@ -44,10 +47,13 @@ class Computation:
 
     def compare(self):
         self.choose_hero()
-        return self.calculate_scores()
+        score_result = self.calculate_scores()
+        hero_name = self.hero_data.get("name", "Unknown Hero")  # Safer access
+        safe_hero_name = hero_name.replace(' ', '_')
+        return {'hero_name': hero_name, 'score_result': score_result, 'safe_hero_name': safe_hero_name}
 
 # Usage
 if __name__ == "__main__":
     comp = Computation()
-    winner = comp.compare()
-    print(f"The winner is: {winner}")
+    result = comp.compare()
+    print(f"The winner is: {result}")
