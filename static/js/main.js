@@ -46,6 +46,7 @@ function modifyJSON() {
     .catch(error => {
         console.error('There was a problem modifying the JSON file:', error);
     });
+    window.location.href='/comparison';
 }
 
 var currentTab = 0;
