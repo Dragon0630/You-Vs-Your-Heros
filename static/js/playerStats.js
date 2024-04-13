@@ -46,14 +46,16 @@ function fetchPlayerStats() {
         .catch(error => console.error('Error fetching player stats:', error));
 }
 
-function fetchHeroStats(heroName) {
-    fetch('/get_hero_stats/${heroName}')
+// Assuming fetchHeroStats() grabs the hero name internally
+function fetchHeroStats() {
+    const safeheroName = document.getElementById('heroImage').alt;
+    const url = `/get_hero_stats/${safeheroName}`;
+    fetch(url)
         .then(response => response.json())
-        .then(data => {
-            displayStats(data);
-        })
+        .then(data => displayStats(data))
         .catch(error => console.error('Error fetching hero stats:', error));
 }
+
 
 heroStatsBtn.addEventListener('click', function() {
     const heroName = document.getElementById('heroImage').alt; // This needs to match exactly with the JSON filenames
